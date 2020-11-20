@@ -16,6 +16,9 @@ from torch.utils.data import Dataset, DataLoader, SequentialSampler, TensorDatas
 from BERT.tokenization import BertTokenizer
 from BERT.modeling import BertForSequenceClassification, BertConfig
 
+import tensorflow.compat.v1 as tf # TensorFlow 2.0이 TensorFlow 1.0과 호환될 수 있도록 TensorFlow 2.0 기능을 끄기
+tf.disable_eager_execution()
+
 
 class USE(object):
     def __init__(self, cache_path):
